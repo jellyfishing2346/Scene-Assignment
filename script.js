@@ -32,12 +32,15 @@ function drawForegroundImages() {
 function addText() {
     ctx.font = 'bold 36px Arial';
     ctx.fillStyle = 'white';
+    ctx.textAlign = 'left';
     ctx.fillText('Faizan Khan', 20, 50);
     
     ctx.font = '24px Arial';
     ctx.fillStyle = 'yellow';
+    ctx.textAlign = 'right';
     ctx.fillText('Moody Characters', canvas.width - 20, canvas.height - 20);
 }
+
 
 // Call drawScene to start the drawing process
 drawScene();
