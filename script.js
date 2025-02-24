@@ -1,13 +1,16 @@
 const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
 
-// Load and draw background image
-const background = new Image();
-background.src = 'images/background1.jpg';
-background.onload = function() {
-    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-    drawForegroundImages();
-};
+// Function to draw everything
+function drawScene() {
+    // Load and draw background image
+    const background = new Image();
+    background.src = 'images/background1.jpg';
+    background.onload = function() {
+        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+        drawForegroundImages();
+    };
+}
 
 function drawForegroundImages() {
     // Load and draw first foreground image
@@ -33,5 +36,18 @@ function addText() {
     
     ctx.font = '24px Arial';
     ctx.fillStyle = 'yellow';
-    ctx.fillText('Moody Characters', canvas.width - 150, canvas.height - 30);
+    ctx.fillText('Moody Characters', canvas.width - 250, canvas.height - 30);
 }
+
+// Call drawScene to start the drawing process
+drawScene();
+
+// Optional: Add resize functionality
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    drawScene(); // Redraw everything when resized
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas(); // Call once to set initial size
