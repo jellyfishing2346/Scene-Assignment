@@ -36,7 +36,7 @@ function addText() {
     
     ctx.font = '24px Arial';
     ctx.fillStyle = 'yellow';
-    ctx.fillText('Moody Characters', canvas.width - 250, canvas.height - 30);
+    ctx.fillText('Moody Characters', canvas.width - 20, canvas.height - 20);
 }
 
 // Call drawScene to start the drawing process
