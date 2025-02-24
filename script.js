@@ -30,16 +30,29 @@ function drawForegroundImages() {
 }
 
 function addText() {
+    // Add "Faizan Khan" text
     ctx.font = 'bold 36px Arial';
     ctx.fillStyle = 'white';
     ctx.textAlign = 'left';
     ctx.fillText('Faizan Khan', 20, 50);
     
+    // Add "Moody Characters" text
     ctx.font = '24px Arial';
     ctx.fillStyle = 'yellow';
-    ctx.textAlign = 'right';
-    ctx.fillText('Moody Characters', canvas.width - 20, canvas.height - 20);
+    ctx.textAlign = 'left';
+    
+    // Measure the text width
+    let text = 'Moody Characters';
+    let textWidth = ctx.measureText(text).width;
+    
+    // Calculate position to ensure text is fully visible
+    let x = canvas.width - textWidth - 20; // 20px padding from right edge
+    let y = canvas.height - 20; // 20px padding from bottom edge
+    
+    // Draw the text
+    ctx.fillText(text, x, y);
 }
+
 
 
 // Call drawScene to start the drawing process
